@@ -16,5 +16,6 @@ Currently, as of writing, Godot 2.1.7 can be downloaded from here https://downlo
 
 # Credits
 
-Audio also supplied from https://kenney.nl/ 
-
+ - Audio also supplied from https://kenney.nl/ 
+ - Silkscreen font from https://kottke.org/plus/type/silkscreen/index.html
+ - Chunk font may need replacing *still confirming license*
