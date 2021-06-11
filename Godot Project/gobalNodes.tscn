@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://audio/brickBreak0.wav" type="Sample" id=1]
+[ext_resource path="res://audio/brickBreak1.wav" type="Sample" id=2]
+[ext_resource path="res://audio/brickBreak2.wav" type="Sample" id=3]
+[ext_resource path="res://audio/launchBall01.wav" type="Sample" id=4]
+[ext_resource path="res://audio/levelStart01.wav" type="Sample" id=5]
+
+[sub_resource type="SampleLibrary" id=1]
+
+samples/brickBreak01 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 1 )
+}
+samples/brickBreak02 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 2 )
+}
+samples/brickBreak03 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 3 )
+}
+samples/launchBall01 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 4 )
+}
+samples/levelStart01 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 5 )
+}
+
+[node name="gobalNodes" type="Node2D"]
+
+[node name="SamplePlayer2D" type="SamplePlayer2D" parent="."]
+
+params/volume_db = 0.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 1 )
+config/pitch_random = 0.0
+
+

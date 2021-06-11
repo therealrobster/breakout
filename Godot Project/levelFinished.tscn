@@ -1,0 +1,163 @@
+[gd_scene load_steps=11 format=1]
+
+[ext_resource path="res://scripts/levelFinished.gd" type="Script" id=1]
+[ext_resource path="res://textures/2x2transparentGrid.png" type="Texture" id=2]
+[ext_resource path="res://fonts/SilkScreenFont12.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://textures/Button-Large-nextLevel.png" type="Texture" id=4]
+[ext_resource path="res://audio/LevelOver.wav" type="Sample" id=5]
+[ext_resource path="res://audio/buttonPress.wav" type="Sample" id=6]
+[ext_resource path="res://audio/game won.wav" type="Sample" id=7]
+[ext_resource path="res://audio/level won.wav" type="Sample" id=8]
+[ext_resource path="res://textures/particle.png" type="Texture" id=9]
+
+[sub_resource type="SampleLibrary" id=1]
+
+samples/LevelOver = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 5 )
+}
+samples/buttonPress = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 6 )
+}
+"samples/game won" = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 7 )
+}
+"samples/level won" = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 8 )
+}
+
+[node name="levelFinished" type="Control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+script/script = ExtResource( 1 )
+
+[node name="background" type="TextureFrame" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 300.0
+margin/bottom = 540.0
+texture = ExtResource( 2 )
+stretch_mode = 2
+
+[node name="LabelHeading" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 6.0
+margin/top = 84.0
+margin/right = 294.0
+margin/bottom = 125.0
+custom_fonts/font = ExtResource( 3 )
+text = "Level X unlockeD!"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="LabelCurrentScore" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 6.0
+margin/top = 128.0
+margin/right = 294.0
+margin/bottom = 169.0
+custom_fonts/font = ExtResource( 3 )
+text = "Current Score: xx"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="TextureButtonContinue" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 72.0
+margin/top = 214.0
+margin/right = 232.0
+margin/bottom = 244.0
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 4 )
+params/resize_mode = 0
+params/stretch_mode = 0
+
+[node name="SamplePlayer2D" type="SamplePlayer2D" parent="."]
+
+params/volume_db = 0.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 1 )
+config/pitch_random = 0.0
+
+[node name="Particles2D" type="Particles2D" parent="."]
+
+transform/pos = Vector2( 130.637, 69.8455 )
+config/amount = 64
+config/lifetime = 2.5
+config/process_mode = 1
+config/explosiveness = 0.1
+config/texture = ExtResource( 9 )
+params/direction = 0.0
+params/spread = 360.0
+params/linear_velocity = 60.0
+params/spin_velocity = 1.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 12.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 0.1
+params/final_size = 1.0
+params/hue_variation = 10.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 0.3
+randomness/spread = 0.3
+randomness/linear_velocity = 0.3
+randomness/spin_velocity = 0.3
+randomness/initial_size = 0.2
+randomness/final_size = 0.3
+
+[connection signal="pressed" from="TextureButtonContinue" to="." method="_on_TextureButtonContinue_pressed"]
+
+
