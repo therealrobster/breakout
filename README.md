@@ -13,6 +13,11 @@ This is tested on Godot 2.1.7 but may work on older 2.x Godot Engine versions.
 
 Currently, as of writing, Godot 2.1.7 can be downloaded from here https://downloads.tuxfamily.org/godotengine/
 
+## info
+
+Works well on Linux, Android phones / tablets and OS X.  Have not tested in Windows.
+Touch screen works on devices with touch screen to drag bat around.  Mouse works on those machines with mice.
+
 
 # Credits
 
